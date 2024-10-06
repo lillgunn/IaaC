@@ -15,12 +15,6 @@ provider "azurerm" {
   }
 }
 
-resource "azurerm_network_security_group" "nsg-oving04" {
-  name                = var.nsgname
-  location            = var.location
-  resource_group_name = var.rgname
-  tags                = local.common_tags
-}
 
 resource "azurerm_resource_group" "oving04" {
   name     = var.rgname
@@ -53,7 +47,7 @@ resource "azurerm_virtual_network" "vnet1oving04" {
   dns_servers         = ["10.0.0.4", "10.0.0.5"]
   tags                = local.common_tags
 
-   subnet {
+  subnet {
     name             = var.subnet1
     address_prefixes = var.address_prefixes1
   }
@@ -69,9 +63,9 @@ resource "azurerm_virtual_network" "vnet2oving04" {
   dns_servers         = ["10.0.0.4", "10.0.0.5"]
   tags                = local.common_tags
 
-   subnet {
-    name             = var.subnet1
-    address_prefixes = var.address_prefixes1
+  subnet {
+    name             = "subnet2"
+    address_prefixes = ["10.1.4.0/24"]
   }
 
 }
