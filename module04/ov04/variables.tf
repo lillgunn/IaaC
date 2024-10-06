@@ -1,17 +1,16 @@
 # Øving 04 Her legges inn variabler som hentes fra main.tf 
 variable "nsgname" {
-  type = string
+  type        = string
   description = "NSG Name"
-  default = "nsg-oving-terraform"
-  
+  default     = "nsg-oving-terraform"
+
 }
 
 variable "storage_account_names" {
   type        = list(string)
   description = "values for storage account names"
-  default = [ "storage111", "storage222", "storage333"]
+  default     = ["storage15591", "storage21292", "storage393443"]
 }
-
 
 variable "company" {
   type        = string
@@ -43,30 +42,26 @@ variable "rgname" {
 variable "saname" {
   type        = string
   description = "Storage Account Name"
-  default = "sa-oving-terraform"
+  default     = "sa-oving-terraform"
 }
 
 variable "network1" {
-  type = string
+  type        = string
   description = "Nanv på nettverk1"
-  
 }
 
 variable "network2" {
-  type = string
+  type        = string
   description = "Nanv på nettverk2"
-  
 }
 
 variable "subnet1" {
-  type = string
+  type        = string
   description = "Navn på subnet1"
-  default = "subnet1"
-  
+  default     = "subnet1"
 }
 
 variable "address_prefixes1" {
-  type = list(string)
+  type        = list(string)
   description = "IP verdi for Subnet1"
-  
 }
